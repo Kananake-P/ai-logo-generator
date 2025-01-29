@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import HeadingDescription from "./HeadingDescription";
 import Lookup from "@/app/_data/Lookup";
 import { useSearchParams } from "next/navigation";
@@ -24,6 +24,15 @@ function LogoTitle({ onHandleInputChange }) {
         onChange={(e) => onHandleInputChange(e.target.value)}
       />
     </div>
+  );
+}
+
+export function TextTitle() {
+  return (
+    // You could have a loading skeleton as the `fallback` too
+    <Suspense>
+      <LogoTitle />
+    </Suspense>
   );
 }
 
