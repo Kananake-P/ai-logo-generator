@@ -30,7 +30,7 @@ function LogoTitle({ onHandleInputChange }) {
 export function TextTitle() {
   return (
     // You could have a loading skeleton as the `fallback` too
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <LogoTitle />
     </Suspense>
   );
