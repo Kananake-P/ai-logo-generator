@@ -16,23 +16,28 @@ function LogoIdea({ formData, onHandleInputChange }) {
 
   const generateLogoDesignIdea = async () => {
     setLoading(true);
-    const PROMPT = Prompt.DESIGN_IDEA_PROMPT.replace(
-      "{logoType}",
-      formData?.design.title
-    )
-      .replace("{logoTitle}", formData.title)
-      .replace("{logoDesc}", formData.desc)
-      .replace("{logoPrompt}", formData.design.prompt);
-
-    // console.log(PROMPT);
-
-    const result = await axios.post("/api/ai-design-ideas", {
-      prompt: PROMPT,
-    });
-
-    console.log(result.data);
-    !ideas && setIdeas(result.data.ideas);
-    setLoading(false);
+    try {
+      const PROMPT = Prompt.DESIGN_IDEA_PROMPT.replace(
+        "{logoType}",
+        formData?.design.title
+      )
+        .replace("{logoTitle}", formData.title)
+        .replace("{logoDesc}", formData.desc)
+        .replace("{logoPrompt}", formData.design.prompt);
+  
+      // console.log(PROMPT);
+  
+      const result = await axios.post("/api/ai-design-ideas", {
+        prompt: PROMPT,
+      });
+  
+      console.log(result);
+      !ideas && setIdeas(result.data.ideas);
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+    }
+    
   };
 
   return (
