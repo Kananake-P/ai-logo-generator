@@ -10,7 +10,7 @@ function LogoTitle({ onHandleInputChange }) {
   // const [title, setTitle] = useState(searchParam?.get("title") ?? "");
   // console.log(title);
   return (
-    <div className="my-10">
+    <div className="my-10 ">
       <HeadingDescription
         title={Lookup?.LogoTitle}
         description={Lookup.LogoTitleDesc}

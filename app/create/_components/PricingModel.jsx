@@ -27,7 +27,7 @@ function PricingModel({ formData }) {
         {Lookup.pricingOption.map((pricing, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-5 border rounded-xl"
+            className="flex flex-col items-center p-5 border rounded-xl "
           >
             <Image
               src={pricing.icon}

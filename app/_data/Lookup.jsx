@@ -44,6 +44,7 @@ export default {
         "⚫ Shorter wait times",
         "⚫ Wait time: Less than 10 seconds",
         "⚫ Only 5 Credits",
+        "⚫ More Faster",
       ],
       button: "Generate Free",
     },

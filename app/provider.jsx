@@ -28,7 +28,7 @@ function Provider({ children }) {
     <div>
       <UserDetailContext.Provider value={{ userDetail, setUserDetail }}>
         <Header />
-        <div className="px-10 lg:px-32 xl:px-48 2xl:px-56 p-4 flex justify-between items-center ">
+        <div className="px-10 lg:px-32 xl:px-48 2xl:px-56 p-4 flex justify-center items-center">
           {children}
         </div>
       </UserDetailContext.Provider>
